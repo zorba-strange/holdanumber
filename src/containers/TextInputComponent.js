@@ -21,15 +21,15 @@ const {
 const TextInputComponent = ({
     keyboard_type,
     maxLength,
-    textInputType,
     value,
     onChange,
-    days_held_input,
+    placeholder,
 }) => {
     return (
         <TextInput
             onChangeText={onChange}
             value={value}
+            placeholder={placeholder}
             maxLength={maxLength}
             keyboardType={keyboard_type}
             style={{

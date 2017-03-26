@@ -21,6 +21,10 @@ class PhoneNumberComponent extends React.Component {
     render(){
         const phone_pad = 'phone-pad';
         const maxLength = 10;
+        const {
+            phone_number_input,
+            gettingPhoneNumberInput,
+        } = this.props;
         return (
             <View
                 style={{
@@ -33,9 +37,11 @@ class PhoneNumberComponent extends React.Component {
                 <TextInputComponent
                     onChange={(phone_number) => {
                         this.setState({phone_number});
+                        gettingPhoneNumberInput(phone_number);
                     }}
                     maxLength={maxLength}
-                    value={this.state.phone_number}
+                    placeholder={this.state.phone_number}
+                    value={phone_number_input}
                     keyboard_type={phone_pad}/>
             </View>
         );
@@ -43,10 +49,16 @@ class PhoneNumberComponent extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    console.log('state', state.submittingReducer.getIn(['phone_number_input']));
     return {
-        phone_number_input: state.submittingReducer.phone_number_input,
+        phone_number_input: state.submittingReducer.getIn(['phone_number_input']),
     };
 };
 
-module.exports = connect(mapStateToProps)(PhoneNumberComponent);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        gettingPhoneNumberInput: bindActionCreators(gettingPhoneNumberInput, dispatch),
+    };
+};
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(PhoneNumberComponent);

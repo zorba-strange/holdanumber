@@ -1,6 +1,6 @@
 const React                   = require('react');
 const {AppRegistry}           = require('react-native');
+import entry_point            from './src/entry_point';
 
-import App                    from './src/containers/App';
 
-AppRegistry.registerComponent('holdanumber', () => App);
+AppRegistry.registerComponent('holdanumber', () => entry_point);

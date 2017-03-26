@@ -36,7 +36,6 @@ class PhoneNumberComponent extends React.Component {
                 </Text>
                 <TextInputComponent
                     onChange={(phone_number) => {
-                        this.setState({phone_number});
                         gettingPhoneNumberInput(phone_number);
                     }}
                     maxLength={maxLength}

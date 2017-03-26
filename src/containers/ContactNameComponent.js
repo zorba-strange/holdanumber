@@ -9,6 +9,7 @@ const {
 
 const ContactNameComponent = () => {
     const regular_keyboard = 'default';
+    const maxLength = 30;
     return (
         <View
             style={{
@@ -16,9 +17,10 @@ const ContactNameComponent = () => {
                 flexDirection: 'column',
             }}>
             <Text>
-                Contact Name
+                Contact Name (if left blank, today's date will be used);
             </Text>
             <TextInputComponent
+                maxLength={maxLength}
                 keyboard_type={regular_keyboard}/>
         </View>
     );

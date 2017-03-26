@@ -1,4 +1,5 @@
 const React                   = require('react');
+const Immutable               = require('immutable');
 const {
     createStore,
     combineReducers,
@@ -9,6 +10,7 @@ import App                    from './containers/App';
 const {
     View,
 }                              = require('react-native');
+
 
 const reducers = combineReducers({submittingReducer});
 const store = createStore(reducers);

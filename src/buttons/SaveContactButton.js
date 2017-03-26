@@ -7,6 +7,9 @@ const {
 const SaveContactButton = () => {
     return (
         <Button
+            onPress={() => {
+                console.log('button pressed');
+            }}
             title="Hold"/>
     );
 }

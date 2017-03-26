@@ -48,7 +48,6 @@ class PhoneNumberComponent extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-    console.log('state', state.submittingReducer.getIn(['phone_number_input']));
     return {
         phone_number_input: state.submittingReducer.getIn(['phone_number_input']),
     };

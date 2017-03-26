@@ -29,7 +29,7 @@ const gettingPhoneNumberInput = (phone_number_input) => {
 
 const gettingDaysHeldInput = (days_held_input) => {
     return {
-        type: GETTTING_DAYS_HELD_INPUT,
+        type: GETTING_DAYS_HELD_INPUT,
         days_held_input,
     };
 };
